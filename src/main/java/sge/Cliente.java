@@ -54,36 +54,36 @@ public class Cliente extends Usuario {
 		this.dispositivos = dispositivos;
 	}
 
-	public ArrayList<Dispositivo> getDispositivos(boolean estaEncendido) {
+	public ArrayList<Dispositivo> estadoDispositivos(boolean estado) {
 		ArrayList<Dispositivo> auxDispositivos;
 		auxDispositivos = new ArrayList<Dispositivo>();
 		
 		for (int i = 0; i < this.dispositivos.size(); ++i) {
-		    if ( this.dispositivos.get(i).estaEncendido()) {
-		    	auxDispositivos.add(this.dispositivos.get(i));
+		    if (estado == this.dispositivos.get(i).estaEncendido()) {
+		    	auxDispositivos.add(this.dispositivos.get(i));	
 		    }
 		}
 		
 		return auxDispositivos;
 	}
 
-	// Saber si alguno de sus dispositivos está encendido
-	public boolean getAlgunoEncendido() {
-		return (this.getDispositivos(true).size() > 0);
+	// Saber si alguno de sus dispositivos esta encendido
+	public boolean AlgunoEncendido() {
+		return (this.estadoDispositivos(true).size() > 0);
 	}
 
 	// Saber la cantidad de dispositivos encendidos
-	public Integer getCantidadEncendidos() {
-		return this.getDispositivos(true).size();
+	public Integer CantidadEncendidos() {
+		return this.estadoDispositivos(true).size();
 	}
 
 	// Saber la cantidad de dispositivos apagados
-	public Integer getCantidadApagados() {
-		return this.getDispositivos(false).size();
+	public Integer CantidadApagados() {
+		return this.estadoDispositivos(false).size();
 	}
 
 	// Informar la cantidad total de dispositivos que posee
-	public Integer getCantidadDispositivos() {
+	public Integer CantidadDispositivos() {
 		return this.dispositivos.size();
 	}
 
