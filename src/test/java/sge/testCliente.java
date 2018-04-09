@@ -29,8 +29,8 @@ public class testCliente {
 		
 		this.unCliente.setDispositivos(auxDispositivos);
 		
-		Assert.assertEquals(1, this.unCliente.CantidadEncendidos(), 0.01);
-		assertTrue (this.unCliente.AlgunoEncendido());
+		Assert.assertEquals(1, this.unCliente.cantidadEncendidos(), 0.01);
+		assertTrue (this.unCliente.algunoEncendido());
 	}
 	
 	
@@ -48,7 +48,24 @@ public class testCliente {
 		
 		this.unCliente.setDispositivos(auxDispositivos);
 		
-		Assert.assertEquals(3, this.unCliente.CantidadApagados(), 0.01);
+		Assert.assertEquals(3, this.unCliente.cantidadApagados(), 0.01);
+	}
+	
+	@Test
+	public void testAgregarDispositivos() {
+		ArrayList <Dispositivo> auxDispositivos;
+		auxDispositivos = new ArrayList<Dispositivo>();
+		auxDispositivos.add(new Dispositivo("TV",1));
+		auxDispositivos.add(new Dispositivo("Heladera",2));
+		auxDispositivos.add(new Dispositivo("Plancha",3));
+		
+		this.unCliente.setDispositivos(auxDispositivos);
+		
+		Assert.assertEquals(3, this.unCliente.cantidadDispositivos(), 0.01);
+		
+		this.unCliente.agregarDispositivo(new Dispositivo("Ventilador",4));
+		
+		Assert.assertEquals(4, this.unCliente.cantidadDispositivos(), 0.01);
 	}
 	
 	

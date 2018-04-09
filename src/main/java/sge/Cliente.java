@@ -68,23 +68,28 @@ public class Cliente extends Usuario {
 	}
 
 	// Saber si alguno de sus dispositivos esta encendido
-	public boolean AlgunoEncendido() {
+	public boolean algunoEncendido() {
 		return (this.estadoDispositivos(true).size() > 0);
 	}
 
 	// Saber la cantidad de dispositivos encendidos
-	public Integer CantidadEncendidos() {
+	public Integer cantidadEncendidos() {
 		return this.estadoDispositivos(true).size();
 	}
 
 	// Saber la cantidad de dispositivos apagados
-	public Integer CantidadApagados() {
+	public Integer cantidadApagados() {
 		return this.estadoDispositivos(false).size();
 	}
 
 	// Informar la cantidad total de dispositivos que posee
-	public Integer CantidadDispositivos() {
+	public Integer cantidadDispositivos() {
 		return this.dispositivos.size();
+	}
+	
+	public void agregarDispositivo(Dispositivo dispositivo) {
+		this.getDispositivos().add(dispositivo);
+		
 	}
 
 }
