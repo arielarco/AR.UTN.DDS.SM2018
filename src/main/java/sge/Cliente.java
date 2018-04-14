@@ -7,8 +7,7 @@ public class Cliente extends Usuario {
 
 	private Documento documento;
 	private Integer telefono;
-	private Date fechaAlta;
-	private Categoria categoria;
+	private Date fechaAlta;	
 
 	private ArrayList<Dispositivo> dispositivos;
 
@@ -38,14 +37,6 @@ public class Cliente extends Usuario {
 		this.fechaAlta = fechaAlta;
 	}
 
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-
 	public ArrayList<Dispositivo> getDispositivos() {
 		return dispositivos;
 	}
@@ -57,13 +48,13 @@ public class Cliente extends Usuario {
 	public ArrayList<Dispositivo> getDispositivos(boolean estaEncendido) {
 		ArrayList<Dispositivo> auxDispositivos;
 		auxDispositivos = new ArrayList<Dispositivo>();
-		
+
 		for (int i = 0; i < this.dispositivos.size(); ++i) {
-		    if ( this.dispositivos.get(i).estaEncendido()) {
-		    	auxDispositivos.add(this.dispositivos.get(i));
-		    }
+			if (this.dispositivos.get(i).estaEncendido() == estaEncendido) {
+				auxDispositivos.add(this.dispositivos.get(i));
+			}
 		}
-		
+
 		return auxDispositivos;
 	}
 
