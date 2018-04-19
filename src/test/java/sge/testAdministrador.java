@@ -15,7 +15,7 @@ public class testAdministrador {
 	@Test
 	public void testAdministradorGetSystemId() {
 		this.unAdministrador.setSystemId(1);
-		Assert.assertEquals(1, this.unAdministrador.getSystemId(),0.01);
+		Assert.assertEquals(1, this.unAdministrador.getUserId(),0.01);
 	}
 	
 	@Test

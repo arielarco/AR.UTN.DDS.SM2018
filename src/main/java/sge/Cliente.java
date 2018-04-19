@@ -7,7 +7,6 @@ public class Cliente extends Usuario {
 
 	private Documento documento;
 	private Integer telefono;
-	private Date fechaAlta;	
 
 	private ArrayList<Dispositivo> dispositivos;
 
@@ -27,15 +26,7 @@ public class Cliente extends Usuario {
 
 	public void setTelefono(Integer telefono) {
 		this.telefono = telefono;
-	}
-
-	public Date getFechaAlta() {
-		return fechaAlta;
-	}
-
-	public void setFechaAlta(Date fechaAlta) {
-		this.fechaAlta = fechaAlta;
-	}
+	}	
 
 	public ArrayList<Dispositivo> getDispositivos() {
 		return dispositivos;
