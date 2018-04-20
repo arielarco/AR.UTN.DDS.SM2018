@@ -3,9 +3,9 @@ package sge;
 import org.junit.*;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
-public class testCliente {
+
+public class testClienteTest {
 	Cliente unCliente;
 		
 	@Before
@@ -22,8 +22,8 @@ public class testCliente {
 		auxDispositivos.add(new Dispositivo("Heladera",2));
 		auxDispositivos.add(new Dispositivo("Plancha",3));
 		
-		auxDispositivos.get(0).setEstaEncendido(true);
-		auxDispositivos.get(1).setEstaEncendido(true);
+		auxDispositivos.get(0).encender();
+		auxDispositivos.get(1).encender();
 		
 		this.unCliente.setDispositivos(auxDispositivos);
 		

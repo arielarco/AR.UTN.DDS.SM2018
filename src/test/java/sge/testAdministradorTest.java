@@ -2,9 +2,9 @@ package sge;
 
 import org.junit.*;
 
-import java.util.Calendar;
 
-public class testAdministrador {
+
+public class testAdministradorTest {
 	Administrador unAdministrador;
 
 	@Before
