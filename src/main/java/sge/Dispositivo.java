@@ -10,7 +10,7 @@ public class Dispositivo {
 	private GregorianCalendar fechaEncendido;
 	private long tiempoEncendido;
 	private GregorianCalendar fechaApagado;
-
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -41,11 +41,11 @@ public class Dispositivo {
 
 	public void apagar() {
 		if (this.encendido) {
-			GregorianCalendar fechaApagado = new GregorianCalendar();
+			this.encendido = false;
+			this.fechaApagado = new GregorianCalendar();
 			Date tiempoInicial = this.fechaEncendido.getTime();
 			Date tiempoFinal = fechaApagado.getTime();
-			/*this.tiempoEncendido += (fechaApagado.getTimeInMillis() - this.fechaEncendido.getTimeInMillis()) % 45;*/
-			this.tiempoEncendido = (tiempoFinal.getTime() - tiempoInicial.getTime()) / 1000;
+			this.tiempoEncendido += (tiempoFinal.getTime() - tiempoInicial.getTime()) / 1000;
 		}
 		;
 	}

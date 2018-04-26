@@ -2,8 +2,6 @@ package sge;
 
 import org.junit.*;
 
-
-
 public class testAdministradorTest {
 	Administrador unAdministrador;
 

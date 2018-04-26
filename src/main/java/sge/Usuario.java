@@ -1,8 +1,8 @@
 package sge;
 
 public class Usuario {
-	private String nombre;
-	private String apellido;
+	public String nombre;
+	public String apellido;
 	private String nombreUsuario;
 	private String contrasena;
 	private String domicilio;

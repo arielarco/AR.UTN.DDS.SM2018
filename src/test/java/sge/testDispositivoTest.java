@@ -2,6 +2,7 @@ package sge;
 
 import java.util.concurrent.TimeUnit;
 
+
 import org.junit.*;
 public class testDispositivoTest {
 	Dispositivo unDispositivo;
@@ -14,9 +15,9 @@ public class testDispositivoTest {
 	@Test
 	public void testGetAlgunoEncendido() throws InterruptedException {
 		this.unDispositivo.encender();
-		TimeUnit.SECONDS.sleep(10);
+		TimeUnit.SECONDS.sleep(15);
 		this.unDispositivo.apagar();
-		Assert.assertEquals(10, this.unDispositivo.getTiempoEncendido(),0.1);
+		Assert.assertEquals(15, this.unDispositivo.getTiempoEncendido(),0.1);
 	}
 	
 }

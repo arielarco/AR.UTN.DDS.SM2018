@@ -1,5 +1,7 @@
 package sge;
 
+import sge.Categoria;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -8,8 +10,17 @@ public class Cliente extends Usuario {
 	private Documento documento;
 	private Integer telefono;
 	private Date fechaAlta;	
+	public Object categoria;
 
-	private ArrayList<Dispositivo> dispositivos;
+	public ArrayList<Dispositivo> dispositivos;
+	
+	// Este seria el Constructor para Cliente	
+
+	public Cliente(String _nombre, String _apellido) {
+		
+		nombre = _nombre;
+	    apellido = _apellido;	
+	}
 
 	/********************************************/
 
