@@ -1,5 +1,6 @@
 package sge;
 
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class Dispositivo {
@@ -8,7 +9,8 @@ public class Dispositivo {
 	private boolean encendido;
 	private GregorianCalendar fechaEncendido;
 	private long tiempoEncendido;
-
+	private GregorianCalendar fechaApagado;
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -39,14 +41,25 @@ public class Dispositivo {
 
 	public void apagar() {
 		if (this.encendido) {
-			GregorianCalendar fechaApagado = new GregorianCalendar();
-			this.tiempoEncendido += (fechaApagado.getTimeInMillis() - this.fechaEncendido.getTimeInMillis()) % 1000;
-			
+			this.encendido = false;
+			this.fechaApagado = new GregorianCalendar();
+			Date tiempoInicial = this.fechaEncendido.getTime();
+			Date tiempoFinal = fechaApagado.getTime();
+			this.tiempoEncendido += (tiempoFinal.getTime() - tiempoInicial.getTime()) / 1000;
 		}
 		;
 	}
 
+	public void setTiempEncendido(long unTiempoEncendido) {
+		this.tiempoEncendido = unTiempoEncendido;
+	}
+	
 	public long getTiempoEncendido() {
 		return tiempoEncendido;
 	}
+	
+	public double getConsumo() {
+		return this.tiempoEncendido*this.getKwhs();
+	}
+	
 }

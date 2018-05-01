@@ -1,33 +1,34 @@
 package sge;
 
-public abstract class Categoria {
+import sge.Cliente;
+
+public class Categoria {
+
 	private String descripcion;
-	private int rangoDesde;
-	private int rangoHasta;
+	private double consumoInferior;
+	private double consumoSuperior;
+	private double cargoFijo;
+	private double cargoVariable;
 	
-	public Categoria(String descripcion, int rangoDesde, int rangoHasta, float cargoFijo, float cargoVariable) {
-		super();
-		this.descripcion = descripcion;
-		this.rangoDesde = rangoDesde;
-		this.rangoHasta = rangoHasta;
-		this.cargoFijo = cargoFijo;
-		this.cargoVariable = cargoVariable;
+	public Categoria(String unaDescripcion, double unConsInf, double unConsSup, double unCargoFijo, double unCargoVariable) {
+
+		descripcion = unaDescripcion;
+		consumoInferior = unConsInf;
+		consumoSuperior = unConsSup;
+		cargoFijo = unCargoFijo;
+		cargoVariable = unCargoVariable;
 	}
+
+	public double getConsumoInferior() {
+		return this.consumoInferior;
+	}
+
+	public double getConsumoSuperior() {
+		return this.consumoSuperior;
+	}
+
 	public String getDescripcion() {
-		return descripcion;
+		return this.descripcion;
 	}
-	public int getRangoDesde() {
-		return rangoDesde;
-	}
-	public int getRangoHasta() {
-		return rangoHasta;
-	}
-	public float getCargoFijo() {
-		return cargoFijo;
-	}
-	public float getCargoVariable() {
-		return cargoVariable;
-	}
-	private float cargoFijo;
-	private float cargoVariable;
+	
 }
