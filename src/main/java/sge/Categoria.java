@@ -28,4 +28,9 @@ public class Categoria {
 	Categoria r8 = new Categoria(701, 1400, 545.96, 0.851);
 	Categoria r9 = new Categoria(1401, 9999 , 887.19, 0.851);
 	
+	
+	public Object consultarCategoria(Cliente cliente) {
+		
+		return this.tipoCategoria ;
+	}
 }

@@ -10,7 +10,7 @@ public class Cliente extends Usuario {
 	private Documento documento;
 	private Integer telefono;
 	private Date fechaAlta;	
-	public Object categoria;
+	public Object tipoCategoria;
 
 	public ArrayList<Dispositivo> dispositivos;
 	
@@ -89,4 +89,8 @@ public class Cliente extends Usuario {
 		return this.dispositivos.size();
 	}
 
+		public void establecerCategoria(Categoria categoria) {
+			
+			tipoCategoria = categoria.consultarCategoria(this);
+		}
 }
